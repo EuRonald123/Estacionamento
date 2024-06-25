@@ -10,15 +10,35 @@ public class GerenciamentoVagas {
 
     //status é int para converter, 0 ocupada, 1 livre e -1 reservada
     public void adicionarVaga(int numero, String localizacao, int status){
+        Vagas vaga = new Vagas(numero,localizacao,status);
+        vagas.add(vaga);
+    }
+
+    public void atualizarVaga(int numero, int novoStatus){
 
     }
 
-    public List<Vagas> getVagas() {
-        return vagas;
+    public List<Vagas> getVagasDisponiveis(String tipoVeiculo){
+        List<Vagas> vagasDisponiveis=new ArrayList<>();
+        for(Vagas x:vagas){
+            if(x.getStatus()==1){
+                vagasDisponiveis.add(x);
+            }
+        }
+        return vagasDisponiveis;
     }
 
-    public void setVagas(List<Vagas> vagas) {
-        this.vagas = vagas;
+    public Vagas buscarVagaPorNumero(int numero) {
+        for (Vagas x : vagas) {
+            if (x.getNumero() == numero) {
+                return x;
+            }
+        }
+        return null;
+    }
+
+    public List<Vagas> getTodasVagas() {
+        return new ArrayList<>(vagas);
     }
     
 }
