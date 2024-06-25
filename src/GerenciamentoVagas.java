@@ -14,7 +14,7 @@ public class GerenciamentoVagas {
         vagas.add(vaga);
     }
 
-    //mais complicadinho de fazer
+    //mais complicadinho de fazer(não sei se funciona)
     public boolean atualizarVaga(int numero, int novoStatus){
         Vagas vagaAchada=buscarVagaPorNumero(numero);
         if(vagaAchada!=null){
@@ -24,7 +24,6 @@ public class GerenciamentoVagas {
             }
         }
         return false;
-        
     }
 
     //percorre o array e procura por vagas disponiveis
