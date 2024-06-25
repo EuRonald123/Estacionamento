@@ -14,7 +14,6 @@ public class GerenciamentoVagas {
         vagas.add(vaga);
     }
 
-
     //mais complicadinho de fazer
     public void atualizarVaga(int numero, int novoStatus){
 

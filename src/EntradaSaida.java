@@ -22,7 +22,7 @@ public class EntradaSaida {
         return veiculo;
     }
 
-    public Vagas getVaga() {
+    public Vagas getVagas() {
         return vaga;
     }
 
@@ -34,7 +34,7 @@ public class EntradaSaida {
         this.veiculo = veiculo;
     }
 
-    public void setVaga(Vagas vaga) {
+    public void setVagas(Vagas vaga) {
         this.vaga = vaga;
     }
 

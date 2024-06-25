@@ -16,5 +16,29 @@ public class Pagamento {
         System.out.println("Valor Pago: R$ " + valor);
         System.out.println("Método de Pagamento: " + metodoPagamento);
     }
+
+    public EntradaSaida getEntradaSaida() {
+        return entradaSaida;
+    }
+
+    public void setEntradaSaida(EntradaSaida entradaSaida) {
+        this.entradaSaida = entradaSaida;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public String getMetodoPagamento() {
+        return metodoPagamento;
+    }
+
+    public void setMetodoPagamento(String metodoPagamento) {
+        this.metodoPagamento = metodoPagamento;
+    }
 }
 
