@@ -65,6 +65,7 @@ public class Estacionamento {
     public void realizarPagamento(EntradaSaida entradaSaida, double valor, String metodoPagamento,Cliente cliente) {
         Pagamento pagamento = new Pagamento(entradaSaida, valor, metodoPagamento,cliente);
         relatorio.adicionarPagamento(pagamento);
+        //aqui dá meter uma condição para verificar se quer ou não emitir o recibo
         pagamento.emitirRecibo();
     }
 

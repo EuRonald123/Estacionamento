@@ -39,8 +39,9 @@ public class Main {
                     estacionamento.registrarEntrada(carro);
                     break;
                 case "saida carro":
+                
                     System.out.println("Registrando saída do carro...");
-                    estacionamento.registrarSaida(carro, "dinheiro", cliente2);
+                    estacionamento.registrarSaida(carro, "dinheiro", cliente);
                     break;
                 case "entrada moto":
                     //Moto moto = new Moto("AB-34A1", "Honda", 1200);
