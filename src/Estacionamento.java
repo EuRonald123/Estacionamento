@@ -49,7 +49,7 @@ public class Estacionamento {
         }
     }
 
-    public void registrarSaida(Veiculo veiculo, String metodoPagamento) {
+    public void registrarSaida(Veiculo veiculo, String metodoPagamento, Cliente cliente) {
         for (EntradaSaida es : relatorio.getRegistros()) {
             if (es.getVeiculo().equals(veiculo) && es.getVagas().getStatus() == 0) { // 0 para ocupado
                 es.registrarSaida();
@@ -57,13 +57,13 @@ public class Estacionamento {
                 es.getVagas().setStatus(1); // marcar como livre
                 System.out.println("Saída registrada para o veículo: " + veiculo.getDetalhes());
                 System.out.println("Valor a ser pago: R$ " + valor);
-                realizarPagamento(es, valor, metodoPagamento);
+                realizarPagamento(es, valor, metodoPagamento,cliente);
                 break;
             }
         }
     }
-    public void realizarPagamento(EntradaSaida entradaSaida, double valor, String metodoPagamento) {
-        Pagamento pagamento = new Pagamento(entradaSaida, valor, metodoPagamento);
+    public void realizarPagamento(EntradaSaida entradaSaida, double valor, String metodoPagamento,Cliente cliente) {
+        Pagamento pagamento = new Pagamento(entradaSaida, valor, metodoPagamento,cliente);
         relatorio.adicionarPagamento(pagamento);
         pagamento.emitirRecibo();
     }
@@ -73,13 +73,13 @@ public class Estacionamento {
         // Exemplo: R$2 por minuto para Carros, R$3 para Caminhões, R$1 para Motos
         double valorPorMinuto;
         switch (tipoVeiculo) {
-            case "Carro":
+            case "carro":
                 valorPorMinuto = 2.0;
                 break;
-            case "Caminhão":
+            case "caminhão":
                 valorPorMinuto = 3.0;
                 break;
-            case "Moto":
+            case "moto":
                 valorPorMinuto = 1.0;
                 break;
             default:
