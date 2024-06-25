@@ -17,7 +17,7 @@ public class Main {
 
         // Simulando uma espera de 2 segundos para teste
         try {
-            Thread.sleep(2000);
+            Thread.sleep(61000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

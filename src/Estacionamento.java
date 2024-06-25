@@ -54,12 +54,18 @@ public class Estacionamento {
             if (es.getVeiculo().equals(veiculo) && es.getVagas().getStatus() == 0) { // 0 para ocupado
                 es.registrarSaida();
                 double valor = calcularValor(es.getTempoPermanencia(), veiculo.getTipo());
-                Pagamento pagamento = new Pagamento(es, valor, metodoPagamento);
-                relatorio.adicionarPagamento(pagamento);
-                pagamento.emitirRecibo();
+                es.getVagas().setStatus(1); // marcar como livre
+                System.out.println("Saída registrada para o veículo: " + veiculo.getDetalhes());
+                System.out.println("Valor a ser pago: R$ " + valor);
+                realizarPagamento(es, valor, metodoPagamento);
                 break;
             }
         }
+    }
+    public void realizarPagamento(EntradaSaida entradaSaida, double valor, String metodoPagamento) {
+        Pagamento pagamento = new Pagamento(entradaSaida, valor, metodoPagamento);
+        relatorio.adicionarPagamento(pagamento);
+        pagamento.emitirRecibo();
     }
 
     private double calcularValor(long tempoPermanencia, String tipoVeiculo) {
