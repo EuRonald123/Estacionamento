@@ -3,8 +3,8 @@ public class Carro extends Veiculo {
     private String modelo;
     private String marca;
 
-    public Carro(String placa, String horarioEntrada, String cor, String modelo, String marca){
-        super(placa,"carro",horarioEntrada);
+    public Carro(String placa, String cor, String modelo, String marca){
+        super(placa,"carro");
         this.cor=cor;
         this.modelo=modelo;
         this.marca=marca;

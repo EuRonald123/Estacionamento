@@ -2,8 +2,8 @@ public class Caminhão extends Veiculo {
     private float cargaMax;
     private float comprimentoCaminhão;
 
-    public Caminhão(String placa, String horarioEntrada, float cargaMax,float comprimentoCaminhão){
-        super(placa,"caminhao",horarioEntrada);
+    public Caminhão(String placa, float cargaMax,float comprimentoCaminhão){
+        super(placa,"caminhao");
         this.cargaMax=cargaMax;
         this.comprimentoCaminhão=comprimentoCaminhão;
     }

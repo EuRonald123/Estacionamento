@@ -1,12 +1,10 @@
 public class Veiculo {
     private String placa;
     private String tipo;
-    private String horarioEntrada;
 
-    public Veiculo(String placa, String tipo, String horarioEntrada){
+    public Veiculo(String placa, String tipo){
         this.placa=placa;
         this.tipo=tipo;
-        this.horarioEntrada=horarioEntrada;
     }
 
     public String getPlaca() {
@@ -25,13 +23,6 @@ public class Veiculo {
         this.tipo = tipo;
     }
 
-    public String getHorarioEntrada() {
-        return horarioEntrada;
-    }
-
-    public void setHorarioEntrada(String horarioEntrada) {
-        this.horarioEntrada = horarioEntrada;
-    }
 
     
 }
