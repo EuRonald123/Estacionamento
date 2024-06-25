@@ -10,6 +10,11 @@ public class Carro extends Veiculo {
         this.marca=marca;
     }
 
+    @Override
+    public String getDetalhes() {
+        return "Carro - Placa: " + placa + ", Marca: " + marca + ", Modelo: " + modelo;
+    }
+
     public String getCor() {
         return cor;
     }

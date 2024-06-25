@@ -1,28 +1,29 @@
-public class Veiculo {
-    private String placa;
-    private String tipo;
+public abstract class Veiculo {
+    protected String placa;
+    protected String tipo;
+    protected long horarioEntrada;
 
-    public Veiculo(String placa, String tipo){
-        this.placa=placa;
-        this.tipo=tipo;
+    public Veiculo(String placa, String tipo) {
+        this.placa = placa;
+        this.tipo = tipo;
     }
 
     public String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
     public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public long getHorarioEntrada() {
+        return horarioEntrada;
     }
 
+    public void setHorarioEntrada(long horarioEntrada) {
+        this.horarioEntrada = horarioEntrada;
+    }
 
-    
+    public abstract String getDetalhes();
 }
+

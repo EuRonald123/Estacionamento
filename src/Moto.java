@@ -8,6 +8,11 @@ public class Moto extends Veiculo{
         this.cilindradas=cilindradas;
     }
 
+    @Override
+    public String getDetalhes() {
+        return "Moto - Placa: " + placa + ", Marca: " + marca + ", Cilindradas: " + cilindradas;
+    }
+
     public String getMarca() {
         return marca;
     }

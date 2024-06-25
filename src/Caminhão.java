@@ -1,11 +1,16 @@
 public class Caminhão extends Veiculo {
     private float cargaMax;
-    private float comprimentoCaminhão;
+    private float comprimentoCaminhao;
 
     public Caminhão(String placa, float cargaMax,float comprimentoCaminhão){
         super(placa,"caminhao");
         this.cargaMax=cargaMax;
-        this.comprimentoCaminhão=comprimentoCaminhão;
+        this.comprimentoCaminhao=comprimentoCaminhão;
+    }
+
+    @Override
+    public String getDetalhes() {
+        return "Caminhão - Placa: " + placa + ", Carga Máxima: " + cargaMax + "kg, Comprimento: " + comprimentoCaminhao + "m";
     }
 
     public float getCargaMax() {
@@ -16,11 +21,11 @@ public class Caminhão extends Veiculo {
         this.cargaMax = cargaMax;
     }
 
-    public float getComprimentoCaminhão() {
-        return comprimentoCaminhão;
+    public float getComprimentoCaminhao() {
+        return comprimentoCaminhao;
     }
 
-    public void setComprimentoCaminhão(float comprimentoCaminhão) {
-        this.comprimentoCaminhão = comprimentoCaminhão;
+    public void setComprimentoCaminhao(float comprimentoCaminhao) {
+        this.comprimentoCaminhao = comprimentoCaminhao;
     }
 }
