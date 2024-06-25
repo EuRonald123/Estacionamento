@@ -14,10 +14,13 @@ public class GerenciamentoVagas {
         vagas.add(vaga);
     }
 
+
+    //mais complicadinho de fazer
     public void atualizarVaga(int numero, int novoStatus){
 
     }
 
+    //percorre o array e procura por vagas disponiveis
     public List<Vagas> getVagasDisponiveis(String tipoVeiculo){
         List<Vagas> vagasDisponiveis=new ArrayList<>();
         for(Vagas x:vagas){
