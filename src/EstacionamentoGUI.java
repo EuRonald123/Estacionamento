@@ -1,12 +1,12 @@
 import javax.swing.*;
-import java.awt.*;
+//import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class EstacionamentoGUI {
     private Estacionamento estacionamento;
     private JFrame frame;
-    private JTextArea logArea;
+    //private JTextArea logArea;
 
     public EstacionamentoGUI(Estacionamento estacionamento) {
         this.estacionamento = estacionamento;
@@ -15,19 +15,14 @@ public class EstacionamentoGUI {
 
     private void initialize() {
         frame = new JFrame("Sistema de Estacionamento");
-        frame.setBounds(100,100,800, 600);
+        frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(new BorderLayout());
-
-        // Área de log para mostrar informações
-        logArea = new JTextArea();
-        logArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(logArea);
-        frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
+        //frame.getContentPane().setLayout(new BorderLayout());
+        frame.setLocationRelativeTo(null);
 
         // Painel para os botões
         JPanel buttonPanel = new JPanel();
-        frame.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        frame.add(buttonPanel);
 
         // Botões de ações
         JButton btnEntrada = new JButton("Registrar Entrada");
@@ -99,7 +94,7 @@ public class EstacionamentoGUI {
                 }
 
                 estacionamento.registrarEntrada(veiculo);
-                logArea.append("Entrada registrada para o veículo: " + placa + "\n");
+                //logArea.append("Entrada registrada para o veículo: " + placa + "\n");
             }
         }
     }
@@ -126,7 +121,7 @@ public class EstacionamentoGUI {
 
                 if (veiculo != null && cliente != null) {
                     estacionamento.registrarSaida(veiculo, metodoPagamento, cliente);
-                    logArea.append("Saída registrada para o veículo: " + placa + "\n");
+                    //logArea.append("Saída registrada para o veículo: " + placa + "\n");
                 } else {
                     JOptionPane.showMessageDialog(frame, "Veículo ou cliente não encontrado!");
                 }
@@ -135,11 +130,12 @@ public class EstacionamentoGUI {
     }
 
     private void gerarRelatorioOcupacao() {
-        logArea.append("Relatório de Ocupação:\n");
+        //logArea.append("Relatório de Ocupação:\n");
+        estacionamento.gerarRelatorioOcupacao();
     }
 
     private void gerarRelatorioFinanceiro() {
-        logArea.append("Relatório Financeiro:\n");
+        //logArea.append("Relatório Financeiro:\n");
         estacionamento.gerarRelatorioFinanceiro();
     }
 
@@ -150,11 +146,5 @@ public class EstacionamentoGUI {
             }
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        Estacionamento estacionamento = new Estacionamento();
-        // Adicione o código para cadastrar vagas e clientes, se necessário
-        new EstacionamentoGUI(estacionamento);
     }
 }
