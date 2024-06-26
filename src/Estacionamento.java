@@ -1,19 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Estacionamento {
-    private List<Vagas> vagas;
+public class Estacionamento extends GerenciamentoVagas{
     private List<Cliente> clientes;
     private Relatorio relatorio;
 
     public Estacionamento() {
-        vagas = new ArrayList<>();
         clientes = new ArrayList<>();
         relatorio = new Relatorio();
-    }
-
-    public void cadastrarVagas(int numero, String localizacao, int status) {
-        vagas.add(new Vagas(numero, localizacao, status));
     }
 
     public void cadastrarCliente(String nome, String telefone, String email) {
@@ -24,15 +18,6 @@ public class Estacionamento {
         for (Cliente cliente : clientes) {
             if (cliente.getNome().equals(nome)) {
                 return cliente;
-            }
-        }
-        return null;
-    }
-
-    public Vagas buscarVagasLivre(String tipoVeiculo) {
-        for (Vagas vaga : vagas) {
-            if (vaga.getStatus() == 1) { // 1 para livre
-                return vaga;
             }
         }
         return null;
@@ -51,10 +36,10 @@ public class Estacionamento {
 
     public void registrarSaida(Veiculo veiculo, String metodoPagamento, Cliente cliente) {
         for (EntradaSaida es : relatorio.getRegistros()) {
-            if (es.getVeiculo().equals(veiculo) && es.getVagas().getStatus() == 0) { // 0 para ocupado
+            if (es.getVeiculo().equals(veiculo) && es.getVaga().getStatus() == 0) { // 0 para ocupado
                 es.registrarSaida();
                 double valor = calcularValor(es.getTempoPermanencia(), veiculo.getTipo());
-                es.getVagas().setStatus(1); // marcar como livre
+                es.getVaga().setStatus(1); // marcar como livre
                 System.out.println("Saída registrada para o veículo: " + veiculo.getDetalhes());
                 System.out.println("Valor a ser pago: R$ " + valor);
                 realizarPagamento(es, valor, metodoPagamento,cliente);

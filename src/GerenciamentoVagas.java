@@ -14,29 +14,7 @@ public class GerenciamentoVagas {
         vagas.add(vaga);
     }
 
-    //mais complicadinho de fazer(não sei se funciona)
-    public boolean atualizarVaga(int numero, int novoStatus){
-        Vagas vagaAchada=buscarVagaPorNumero(numero);
-        if(vagaAchada!=null){
-            if(vagaAchada.getStatus()!=1){
-                vagaAchada.setStatus(novoStatus);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    //percorre o array e procura por vagas disponiveis
-    public List<Vagas> getVagasDisponiveis(String tipoVeiculo){
-        List<Vagas> vagasDisponiveis=new ArrayList<>();
-        for(Vagas x:vagas){
-            if(x.getStatus()==1){
-                vagasDisponiveis.add(x);
-            }
-        }
-        return vagasDisponiveis;
-    }
-
+    //funciona
     public Vagas buscarVagaPorNumero(int numero) {
         for (Vagas x : vagas) {
             if (x.getNumero() == numero) {
@@ -46,8 +24,42 @@ public class GerenciamentoVagas {
         return null;
     }
 
-    public List<Vagas> getTodasVagas() {
-        return new ArrayList<>(vagas);
+    //mais complicadinho de fazer(não sei se funciona)
+    public boolean atualizarVaga(int numero, int novoStatus){
+        for (Vagas vagaAchada : vagas) {
+            if (vagaAchada.getNumero() == numero) {
+                if(vagaAchada!=null){
+                    vagaAchada.setStatus(novoStatus);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
+        
+    //funciona
+    //percorre o array e procura por vagas disponiveis
+    public List<Vagas> getVagasDisponiveis(){
+        List<Vagas> vagasDisponiveis=new ArrayList<>();
+        for(Vagas x:vagas){
+            if(x.getStatus()==1){
+                vagasDisponiveis.add(x);
+            }
+        }
+        return vagasDisponiveis;
+    }
+
+
+    //falta adicionar um mecanismo para reservar vaga para um determinado veiculo
+    public Vagas buscarVagasLivre(String tipoVeiculo) {
+        for (Vagas vaga : vagas) {
+            if (vaga.getStatus() == 1) { // 1 para livre
+                return vaga;
+            }
+        }
+        return null;
+    }
+
+    
     
 }

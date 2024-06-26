@@ -22,11 +22,13 @@ public class Relatorio {
         return registros;
     }
 
+
+    //Falta concertar (ou após sair o carro informar qual vaga ele estava para liberar a vaga automaticamente)
     public void gerarRelatorioOcupacao() {
         System.out.println("Relatório de Ocupação:");
         for (EntradaSaida es : registros) {
-            String status = es.getVagas().getStatus() == 1 ? "Livre" : es.getVagas().getStatus() == 0 ? "Ocupado" : "Reservado";
-            System.out.println("Veículo: " + es.getVeiculo().getDetalhes() + ", Vaga: " + es.getVagas().getNumero() + ", Status: " + status);
+            String status = es.getVaga().getStatus() == 1 ? "Livre" : es.getVaga().getStatus() == 0 ? "Ocupado" : "Reservado";
+            System.out.println("Veículo: " + es.getVeiculo().getDetalhes() + ", Vaga: " + es.getVaga().getNumero() + ", Status: " + status);
         }
     }
 
@@ -34,10 +36,9 @@ public class Relatorio {
         double total = 0;
         System.out.println("Relatório Financeiro Diário:");
         for (Pagamento pagamento : pagamentos) {
+            System.out.println(pagamento.getValor());
             total += pagamento.getValor();
         }
         System.out.println("Total arrecadado: R$ " + total);
     }
-
-    
 }

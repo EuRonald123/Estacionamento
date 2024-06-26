@@ -22,7 +22,7 @@ public class EntradaSaida {
         return veiculo;
     }
 
-    public Vagas getVagas() {
+    public Vagas getVaga() {
         return vaga;
     }
 
