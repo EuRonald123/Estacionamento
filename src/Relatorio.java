@@ -38,4 +38,6 @@ public class Relatorio {
         }
         System.out.println("Total arrecadado: R$ " + total);
     }
+
+    
 }

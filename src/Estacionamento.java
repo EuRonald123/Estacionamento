@@ -97,4 +97,12 @@ public class Estacionamento {
     public void gerarRelatorioFinanceiro() {
         relatorio.gerarRelatorioFinanceiro();
     }
+
+    public Relatorio getRelatorio() {
+        return this.relatorio;
+    }
+
+    public List<Cliente> getClientes() {
+        return this.clientes;
+    }
 }

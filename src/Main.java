@@ -6,11 +6,14 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean continuar = true;
 
+        
+
         // Cadastro de vagas
         estacionamento.cadastrarVagas(1, "A1", 1);
         estacionamento.cadastrarVagas(2, "A2", 1);
         estacionamento.cadastrarVagas(3, "A3", 1);
 
+        new EstacionamentoGUI(estacionamento);
         // Cadastro de clientes
         estacionamento.cadastrarCliente("João Silva", "123456789", "joao@example.com");
         Cliente cliente = estacionamento.buscarCliente("João Silva");
