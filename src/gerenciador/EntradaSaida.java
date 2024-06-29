@@ -1,3 +1,6 @@
+package gerenciador;
+import veiculos.Veiculo;
+
 public class EntradaSaida {
     private Veiculo veiculo;
     private Vagas vaga;

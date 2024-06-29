@@ -1,4 +1,14 @@
+package view;
 import javax.swing.*;
+
+import gerenciador.Cliente;
+import gerenciador.EntradaSaida;
+import gerenciador.Estacionamento;
+import veiculos.Caminhão;
+import veiculos.Carro;
+import veiculos.Moto;
+import veiculos.Veiculo;
+
 //import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -1,3 +1,5 @@
+package veiculos;
+
 public class Caminhão extends Veiculo {
     private float cargaMax;
     private float comprimentoCaminhao;

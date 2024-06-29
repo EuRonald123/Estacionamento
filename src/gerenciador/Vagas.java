@@ -1,3 +1,4 @@
+package gerenciador;
 public class Vagas {
     private int numero;
     private String localizacao;

@@ -1,5 +1,8 @@
+package gerenciador;
 import java.util.ArrayList;
 import java.util.List;
+
+import veiculos.Veiculo;
 
 public class Estacionamento {
     private List<Vagas> vagas;

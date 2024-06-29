@@ -1,3 +1,4 @@
+package veiculos;
 public class Moto extends Veiculo{
     private String marca;
     private int cilindradas;

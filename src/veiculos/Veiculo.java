@@ -1,3 +1,4 @@
+package veiculos;
 public abstract class Veiculo {
     protected String placa;
     protected String tipo;
