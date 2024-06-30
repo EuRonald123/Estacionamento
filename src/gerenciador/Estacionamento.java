@@ -42,6 +42,7 @@ public class Estacionamento {
     }
 
     public void registrarEntrada(Veiculo veiculo) {
+    	
         Vagas vagas = buscarVagasLivre(veiculo.getTipo());
         if (vagas != null) {
             vagas.setStatus(0); // marcar como ocupado
@@ -93,12 +94,12 @@ public class Estacionamento {
         return (tempoPermanencia / 60.0) * valorPorMinuto;
     }
 
-    public void gerarRelatorioOcupacao() {
-        relatorio.gerarRelatorioOcupacao();
+    public String gerarRelatorioOcupacao() {
+       return  relatorio.gerarRelatorioOcupacao();
     }
 
-    public void gerarRelatorioFinanceiro() {
-        relatorio.gerarRelatorioFinanceiro();
+    public String gerarRelatorioFinanceiro() {
+       return relatorio.gerarRelatorioFinanceiro();
     }
 
     public Relatorio getRelatorio() {

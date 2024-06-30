@@ -23,34 +23,34 @@ public class Relatorio {
         return registros;
     }
 
-    public void gerarRelatorioOcupacao() {
+    public String gerarRelatorioOcupacao() {
     	
     	StringBuilder relatorio = new StringBuilder();
     	
-    	System.out.println("Relatório de Ocupação:");
+    	//System.out.println("Relatório de Ocupação:");
     	relatorio.append("Relatório de Ocupação: \n");
     	
         for (EntradaSaida es : registros) {
             String status = es.getVagas().getStatus() == 1 ? "Livre" : es.getVagas().getStatus() == 0 ? "Ocupado" : "Reservado";
-            System.out.println("Veículo: " + es.getVeiculo().getDetalhes() + ", Vaga: " + es.getVagas().getNumero() + ", Status: " + status);
+           // System.out.println("Veículo: " + es.getVeiculo().getDetalhes() + ", Vaga: " + es.getVagas().getNumero() + ", Status: " + status);
             relatorio.append("Veículo: " + es.getVeiculo().getDetalhes() + ", Vaga: " + es.getVagas().getNumero() + ", Status: " + status+"\n");
             
         }
-        //return relatorio.toString();
+        return relatorio.toString();
     }
 
-    public void gerarRelatorioFinanceiro() {
+    public String gerarRelatorioFinanceiro() {
         double total = 0;
         StringBuilder relatorio = new StringBuilder();
-        System.out.println("Relatório Financeiro Diário:");
+       // System.out.println("Relatório Financeiro Diário:\n");
         relatorio.append("Relatório Financeiro Diário: \n");
         
         for (Pagamento pagamento : pagamentos) {
             total += pagamento.getValor();
         }
-        System.out.println("Total arrecadado: R$ " + total);
+      //  System.out.println("Total arrecadado: R$ " + total);
         relatorio.append("Total arrecadado: R$ " + total).append("\n");
-        //return relatorio.toString();
+        return relatorio.toString();
     }
     
     public String relatorioEntradaSaida() {
